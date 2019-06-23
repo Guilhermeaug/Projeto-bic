@@ -18,15 +18,17 @@ public class InsertionSort : Pai
     }
 
     public RectTransform ParentPanel;
-    private float tempo = 0;
+    private float tempo = 1;
+    //private float tempoPadrao = 1;
 
     public void insertion()
     {
-        sort(pegaArray(ParentPanel));
+        StartCoroutine(sort(pegaArray(ParentPanel)));
     }
 
-    void sort(Button[] arr)
+    IEnumerator sort(Button[] arr)
     {
+       
         int n = arr.Length;
         for (int i = 1; i < n; ++i)
         {
@@ -37,20 +39,26 @@ public class InsertionSort : Pai
             {
                 // arr[j + 1].GetComponentInChildren<Text>().text = arr[j].GetComponentInChildren<Text>().text;
                 StartCoroutine(colorir(tempo, arr[j + 1], arr[j]));
-                tempo += 1;
+                yield return new WaitForSecondsRealtime(tempo);
+                //tempo += 1;
                 StartCoroutine(troca(tempo, arr[j + 1], arr[j]));
-                tempo += 1;
+                yield return new WaitForSecondsRealtime(tempo);
+                //tempo += 1;
                 StartCoroutine(colorirAgain(tempo, arr[j + 1], arr[j]));
+
+                yield return new WaitForSecondsRealtime(tempo);
                 j = j - 1;
                 //tempo += 2;
             }
             // arr[j + 1].GetComponentInChildren<Text>().text = key.ToString();
             StartCoroutine(colorir(tempo, arr[j + 1], arr[i]));
-            tempo += 1;
+            yield return new WaitForSecondsRealtime(tempo);
+            //tempo += 1;
             StartCoroutine(troca(tempo, arr[j + 1], key));
-            tempo += 1;
+            yield return new WaitForSecondsRealtime(tempo);
+            //tempo += 1;
             StartCoroutine(colorirAgain(tempo, arr[j + 1], arr[i]));
-            tempo += 1;
+            yield return new WaitForSecondsRealtime(tempo);
         }
     }
 
