@@ -19,7 +19,6 @@ public class InsertionSort : Pai
 
     public RectTransform ParentPanel;
     private float tempo = 1;
-    //private float tempoPadrao = 1;
 
     public void insertion()
     {
