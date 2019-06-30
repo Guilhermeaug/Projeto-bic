@@ -32,6 +32,12 @@ public class Pai : MonoBehaviour
         b.GetComponent<Image>().color = Color.cyan;
     }
 
+    public IEnumerator colorir(float tempo, Button a)
+    {
+        yield return new WaitForSecondsRealtime(tempo);
+        a.GetComponent<Image>().color = Color.cyan;
+    }
+
     public IEnumerator troca(float tempo, Button a, Button b)
     {
         yield return new WaitForSecondsRealtime(tempo);
@@ -51,4 +57,13 @@ public class Pai : MonoBehaviour
         a.GetComponent<Image>().color = Color.white;
         b.GetComponent<Image>().color = Color.white;
     }
+
+    public IEnumerator colorirAgain(float tempo, Button a)
+    {
+
+        yield return new WaitForSecondsRealtime(tempo);
+        a.GetComponent<Image>().color = Color.white;
+    }
+
+
 }
