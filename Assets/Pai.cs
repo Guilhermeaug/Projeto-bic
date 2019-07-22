@@ -65,5 +65,21 @@ public class Pai : MonoBehaviour
         a.GetComponent<Image>().color = Color.white;
     }
 
+    public IEnumerator trocaPares(float tempo, Button a, Button b)
+    {
+        yield return new WaitForSecondsRealtime(tempo);
+
+        Text txtBotaoA = null;
+        Text txtBotaoB = null;
+        string aux;
+
+        txtBotaoA = a.GetComponentInChildren<Text>();
+        txtBotaoB = b.GetComponentInChildren<Text>();
+
+        aux = txtBotaoA.text;
+        txtBotaoA.text = txtBotaoB.text;
+        txtBotaoB.text = aux;
+        
+    }
 
 }
