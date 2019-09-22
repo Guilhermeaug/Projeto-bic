@@ -20,6 +20,7 @@ public class QuickSort : Pai
     public RectTransform ParentPanel;
     private float tempo = 1;
     private int pi = 0;
+    int comparacoes = 0, trocas = 0;
 
     public void quick()
     {
@@ -46,17 +47,19 @@ public class QuickSort : Pai
             StartCoroutine(colorir(tempo, arr[high]));
             yield return new WaitForSecondsRealtime(tempo);
 
+            comparacoes = comparacoes + 1;
             if (int.Parse(arr[j].GetComponentInChildren<Text>().text) <= pivot)
             {
                 i++;
 
 
                 //Debug.Log(arr[i].GetComponentInChildren<Text>().text);
-
                 //Debug.Log(arr[j].GetComponentInChildren<Text>().text);
 
+                comparacoes = comparacoes + 1;
                 StartCoroutine(colorir(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
+                trocas = trocas + 1;
                 StartCoroutine(trocaPares(tempo, arr[i], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 StartCoroutine(colorirAgain(tempo, arr[j]));
@@ -69,6 +72,7 @@ public class QuickSort : Pai
 
         StartCoroutine(colorir(tempo, arr[i + 1]));
         yield return new WaitForSecondsRealtime(tempo);
+        trocas = trocas + 1;
         StartCoroutine(trocaPares(tempo, arr[i + 1], arr[high]));
         yield return new WaitForSecondsRealtime(tempo);
         StartCoroutine(colorirAgain(tempo, arr[high], arr[i + 1]));

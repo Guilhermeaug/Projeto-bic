@@ -19,6 +19,7 @@ public class SelectionSort : Pai
 
     public RectTransform ParentPanel;
     private float tempo = 1;
+    int comparacoes = 0, trocas = 0;
 
     public void selection()
     {
@@ -39,6 +40,8 @@ public class SelectionSort : Pai
                 StartCoroutine(colorir(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
 
+                comparacoes = comparacoes + 1;
+
                 if (int.Parse(arr[j].GetComponentInChildren<Text>().text) < int.Parse(arr[min_idx].GetComponentInChildren<Text>().text))
                 {
                     min_idx = j;
@@ -50,6 +53,8 @@ public class SelectionSort : Pai
             }
             
             int temp =  int.Parse(arr[min_idx].GetComponentInChildren<Text>().text);
+
+            trocas = trocas + 1;
 
             StartCoroutine(colorir(tempo, arr[min_idx]));
             yield return new WaitForSecondsRealtime(tempo);

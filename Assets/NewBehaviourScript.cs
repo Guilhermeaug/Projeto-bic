@@ -7,7 +7,7 @@ public class NewBehaviourScript : Pai
 {
 
     public RectTransform ParentPanel;
-   
+    int trocas = 0, comparacoes = 0;
 
     private float tempo = 0;
 
@@ -23,9 +23,7 @@ public class NewBehaviourScript : Pai
 
     }
 
-   
-
-
+  
     void trocarCorTodos(Button[] botoes)
     {
         foreach (Button x in botoes)
@@ -55,7 +53,7 @@ public class NewBehaviourScript : Pai
 
             foreach (Button x in botoes)
             {
-
+                
                 if (botaoA == null)
                 {
                     botaoA = x;
@@ -85,11 +83,6 @@ public class NewBehaviourScript : Pai
                     tempo = tempo + 2;
                     StartCoroutine(comparar(tempo, botaoA, botaoB));
                 }
-
-
-
-
-
             }
 
             //Debug.Log("TROCANDO COR DE TODOS");
@@ -100,15 +93,6 @@ public class NewBehaviourScript : Pai
     }
 
    
-    /*
-    Button[] pegaArray()
-    {
-        Button[] botoes = ParentPanel.GetComponentsInChildren<Button>();
-
-        return botoes;
-    }*/
-
-
     IEnumerator comparar(float tempo, Button a, Button b)
     {
 
@@ -120,9 +104,11 @@ public class NewBehaviourScript : Pai
         txtBotaoA = a.GetComponentInChildren<Text>();
         txtBotaoB = b.GetComponentInChildren<Text>();
 
+        comparacoes = comparacoes + 1;
 
         if (int.Parse(txtBotaoB.text) < int.Parse(txtBotaoA.text))
         {
+            trocas = trocas + 1;
             aux = txtBotaoA.text;
             txtBotaoA.text = txtBotaoB.text;
             txtBotaoB.text = aux;

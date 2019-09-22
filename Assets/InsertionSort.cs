@@ -20,11 +20,10 @@ public class InsertionSort : Pai
 
     public RectTransform ParentPanel;
     private float tempo = 1;
+    int comparacoes = 0, trocas = 0;
 
     public void insertion()
     {
-        
-        
         StartCoroutine(sort(pegaArray(ParentPanel)));
     }
 
@@ -37,12 +36,15 @@ public class InsertionSort : Pai
             int key = int.Parse(arr[i].GetComponentInChildren<Text>().text);
             int j = i - 1;
 
+            comparacoes = comparacoes + 1;
             while (j >= 0 && int.Parse(arr[j].GetComponentInChildren<Text>().text) > key)
             {
+                comparacoes = comparacoes + 1;
                 // arr[j + 1].GetComponentInChildren<Text>().text = arr[j].GetComponentInChildren<Text>().text;
                 StartCoroutine(colorir(tempo, arr[j + 1], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
+                trocas = trocas + 1;
                 StartCoroutine(troca(tempo, arr[j + 1], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
@@ -56,6 +58,7 @@ public class InsertionSort : Pai
             StartCoroutine(colorir(tempo, arr[j + 1], arr[i]));
             yield return new WaitForSecondsRealtime(tempo);
             //tempo += 1;
+            trocas = trocas + 1;
             StartCoroutine(troca(tempo, arr[j + 1], key));
             yield return new WaitForSecondsRealtime(tempo);
             //tempo += 1;

@@ -19,6 +19,7 @@ public class ShellSort : Pai
 
     public RectTransform ParentPanel;
     private float tempo = 1;
+    int trocas = 0, comparacoes = 0;
 
     public void shell()
     {
@@ -39,13 +40,16 @@ public class ShellSort : Pai
 
                 int j;
 
+                comparacoes = comparacoes + 1;
                 for (j = i; j >= gap && int.Parse(arr[j - gap].GetComponentInChildren<Text>().text) > temp; j -= gap)
                 {
                     //arr[j] = arr[j - gap];
 
+                    comparacoes = comparacoes + 1;
                     StartCoroutine(colorir(tempo, arr[j], arr[j - gap]));
                     yield return new WaitForSecondsRealtime(tempo);
                     //tempo += 1;
+                    trocas = trocas + 1;
                     StartCoroutine(troca(tempo, arr[j], arr[j - gap]));
                     yield return new WaitForSecondsRealtime(tempo);
                     //tempo += 1;
@@ -61,7 +65,8 @@ public class ShellSort : Pai
                  //arr[j + 1].GetComponentInChildren<Text>().text = key.ToString();
                  StartCoroutine(colorir(tempo, arr[j], arr[i]));
                  yield return new WaitForSecondsRealtime(tempo);
-                 //tempo += 1;
+                //tempo += 1;
+                trocas = trocas + 1;
                  StartCoroutine(troca(tempo, arr[j], temp));
                  yield return new WaitForSecondsRealtime(tempo);
                  //tempo += 1;

@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Selection e Quick
+  m_Text: Insertion e Quick
 --- !u!222 &125287080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -389,10 +389,10 @@ GameObject:
   - component: {fileID: 370958807}
   - component: {fileID: 370958806}
   - component: {fileID: 370958805}
-  - component: {fileID: 370958804}
   - component: {fileID: 370958808}
+  - component: {fileID: 370958804}
   m_Layer: 5
-  m_Name: btnSelectionQuick
+  m_Name: btnInsertionQuick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 79.99997, y: 107.400024}
+  m_AnchoredPosition: {x: 79, y: 107.400024}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370958804
@@ -474,8 +474,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 370958804}
-        m_MethodName: quick
+      - m_Target: {fileID: 370958808}
+        m_MethodName: insertion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -485,8 +485,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 370958808}
-        m_MethodName: selection
+      - m_Target: {fileID: 370958804}
+        m_MethodName: quick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 370958802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af149201fead74a4ab701246c880261d, type: 3}
+  m_Script: {fileID: 11500000, guid: 50781411daa130f4e8fa7970983b49b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ParentPanel: {fileID: 182025287}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 389955456}
   - component: {fileID: 389955455}
   m_Layer: 5
-  m_Name: btnSelectionShell
+  m_Name: btnInsertionShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 389955456}
-        m_MethodName: selection
+        m_MethodName: insertion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 389955450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af149201fead74a4ab701246c880261d, type: 3}
+  m_Script: {fileID: 11500000, guid: 50781411daa130f4e8fa7970983b49b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ParentPanel: {fileID: 182025287}
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 704271254}
   - component: {fileID: 704271253}
   m_Layer: 5
-  m_Name: btnSelectionInsertion
+  m_Name: btnInsertionSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50781411daa130f4e8fa7970983b49b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentPanel: {fileID: 0}
+  ParentPanel: {fileID: 182025287}
 --- !u!114 &704271254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af149201fead74a4ab701246c880261d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentPanel: {fileID: 0}
+  ParentPanel: {fileID: 2011412980}
 --- !u!1 &793240516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,9 +1201,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Selection e Bubble
-
-'
+  m_Text: Insertion e Bubble
 --- !u!222 &907834445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1282,7 +1280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Selection e Shell
+  m_Text: Insertion e Shell
 --- !u!222 &924842820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1577,7 +1575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Selection e Insertion \n"
+  m_Text: Insertion e Selection
 --- !u!222 &1514323325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1601,7 +1599,7 @@ GameObject:
   - component: {fileID: 1659991834}
   - component: {fileID: 1659991830}
   m_Layer: 5
-  m_Name: btnSelectionBubble
+  m_Name: btnInsertionBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1639,7 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af149201fead74a4ab701246c880261d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentPanel: {fileID: 182025287}
+  ParentPanel: {fileID: 2011412980}
 --- !u!114 &1659991831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,7 +1693,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1659991834}
-        m_MethodName: bubble
+        m_MethodName: insertion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1753,10 +1751,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659991828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24ce92fe9c4d5b14a8a82e5f81b23f1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 50781411daa130f4e8fa7970983b49b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentPanel: {fileID: 2011412980}
+  ParentPanel: {fileID: 182025287}
 --- !u!1 &1729900252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1932,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ordena\xE7\xE3o"
+  m_Text: Insertion
 --- !u!222 &1832348972
 CanvasRenderer:
   m_ObjectHideFlags: 0
