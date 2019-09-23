@@ -18,6 +18,7 @@ public class SelectionSort : Pai
     }
 
     public RectTransform ParentPanel;
+    public Button buttonTrocas, buttonComparacoes;
     private float tempo = 1;
     int comparacoes = 0, trocas = 0;
 
@@ -65,9 +66,17 @@ public class SelectionSort : Pai
 
             StartCoroutine(colorirAgain(tempo, arr[i], arr[min_idx]));
             yield return new WaitForSecondsRealtime(tempo);
+        }
 
+        //string txtTrocas = trocas.ToString();
+        Text txtTrocas1 = buttonTrocas.GetComponentInChildren<Text>();
+        string valor1 = trocas.ToString();
+        txtTrocas1.text = valor1;
 
-             
-        } 
-    } 
+        Text txtTrocas2 = buttonComparacoes.GetComponentInChildren<Text>();
+        string valor2 = comparacoes.ToString();
+        txtTrocas2.text = valor2;
+
+    }
+
 }
