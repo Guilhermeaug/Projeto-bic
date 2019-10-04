@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class GeradorNumerosRandom : MonoBehaviour
 {
     // Start is called before the first frame update
-    public InputField numero;
+    //public InputField numero;
     public GameObject prefabButton;
     public RectTransform ParentPanel;
+    private StaticValue info;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        info = GameObject.FindObjectOfType<StaticValue>();
     }
 
     // Update is called once per frame
@@ -24,7 +25,8 @@ public class GeradorNumerosRandom : MonoBehaviour
 
     public void gerarNumeros()
     {
-        int qtd = int.Parse(numero.text);
+        //int qtd = int.Parse(numero.text);
+        int qtd = info.getQtd();
 
         MyAwesomeCreator(qtd);
 
@@ -33,12 +35,16 @@ public class GeradorNumerosRandom : MonoBehaviour
     void MyAwesomeCreator(int qtd)
     {
         string valor;
+        int inicio, fim;
+
+        inicio = info.getInicio();
+        fim = info.getFim();
 
         for(int i = 0; i < qtd; ++i)
         {
             GameObject goButton = (GameObject)Instantiate(prefabButton);
             Text valorBtn = goButton.GetComponentInChildren<Text>();
-            valor = (Random.Range(0, 101).ToString());
+            valor = (Random.Range(inicio, fim + 1).ToString());
             
             valorBtn.text = valor;
             goButton.transform.SetParent(ParentPanel, false);

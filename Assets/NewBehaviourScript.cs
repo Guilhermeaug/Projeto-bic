@@ -11,19 +11,6 @@ public class NewBehaviourScript : Pai
 
     private float tempo = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-  
     void trocarCorTodos(Button[] botoes)
     {
         foreach (Button x in botoes)

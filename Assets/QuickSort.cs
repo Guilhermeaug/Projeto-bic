@@ -5,17 +5,6 @@ using UnityEngine.UI;
 
 public class QuickSort : Pai
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public RectTransform ParentPanel;
     private float tempo = 1;

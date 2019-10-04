@@ -5,20 +5,9 @@ using UnityEngine.UI;
 
 public class SelectionSort : Pai
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    
     public RectTransform ParentPanel;
-    public Button buttonTrocas, buttonComparacoes;
+    //public Button buttonTrocas, buttonComparacoes;
     private float tempo = 1;
     int comparacoes = 0, trocas = 0;
 
@@ -69,13 +58,13 @@ public class SelectionSort : Pai
         }
 
         //string txtTrocas = trocas.ToString();
-        Text txtTrocas1 = buttonTrocas.GetComponentInChildren<Text>();
-        string valor1 = trocas.ToString();
-        txtTrocas1.text = valor1;
+        //Text txtTrocas1 = buttonTrocas.GetComponentInChildren<Text>();
+        //string valor1 = trocas.ToString();
+        //txtTrocas1.text = valor1;
 
-        Text txtTrocas2 = buttonComparacoes.GetComponentInChildren<Text>();
-        string valor2 = comparacoes.ToString();
-        txtTrocas2.text = valor2;
+        //Text txtTrocas2 = buttonComparacoes.GetComponentInChildren<Text>();
+        //string valor2 = comparacoes.ToString();
+        //txtTrocas2.text = valor2;
 
     }
 
