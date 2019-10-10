@@ -8,16 +8,17 @@ public class LoadNumeros : MonoBehaviour
     private GeradorNumerosRandom gerador;
     private StaticValue info;
     private MetodosOrdenacao ordenacao;
+    private Contador contador;
     void Start()
     {
         gerador = GameObject.FindObjectOfType<GeradorNumerosRandom>();
         info = GameObject.FindObjectOfType<StaticValue>();
         ordenacao = GameObject.FindObjectOfType<MetodosOrdenacao>();
-
-        //Scene currentScene = SceneManager.GetActiveScene();
-        //string sceneName = currentScene.name;
-
+        contador = GameObject.FindObjectOfType<Contador>();
+        
         gerador.gerarNumeros();
+        contador.preencheBotoes();
+
 
         string metodo = info.getMetodo();
 

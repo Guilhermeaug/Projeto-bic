@@ -8,7 +8,7 @@ public class MetodosOrdenacao : Pai
     public RectTransform ParentPanel;
     //public Button buttonTrocas, buttonComparacoes;
     private float tempo = 1, tempoInicial = 3;
-    int comparacoes = 0, trocas = 0;
+    //int comparacoes = 0, trocas = 0;
 
     public void selection()
     {
@@ -31,7 +31,7 @@ public class MetodosOrdenacao : Pai
                 StartCoroutine(colorir(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
 
-                comparacoes = comparacoes + 1;
+                //comparacoes = comparacoes + 1;
 
                 if (int.Parse(arr[j].GetComponentInChildren<Text>().text) < int.Parse(arr[min_idx].GetComponentInChildren<Text>().text))
                 {
@@ -45,7 +45,7 @@ public class MetodosOrdenacao : Pai
 
             int temp = int.Parse(arr[min_idx].GetComponentInChildren<Text>().text);
 
-            trocas = trocas + 1;
+            //trocas = trocas + 1;
 
             StartCoroutine(colorir(tempo, arr[min_idx]));
             yield return new WaitForSecondsRealtime(tempo);
@@ -84,15 +84,15 @@ public class MetodosOrdenacao : Pai
             int key = int.Parse(arr[i].GetComponentInChildren<Text>().text);
             int j = i - 1;
 
-            comparacoes = comparacoes + 1;
+            //comparacoes = comparacoes + 1;
             while (j >= 0 && int.Parse(arr[j].GetComponentInChildren<Text>().text) > key)
             {
-                comparacoes = comparacoes + 1;
+                //comparacoes = comparacoes + 1;
                 // arr[j + 1].GetComponentInChildren<Text>().text = arr[j].GetComponentInChildren<Text>().text;
                 StartCoroutine(colorir(tempo, arr[j + 1], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
-                trocas = trocas + 1;
+                //trocas = trocas + 1;
                 StartCoroutine(troca(tempo, arr[j + 1], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
@@ -106,7 +106,7 @@ public class MetodosOrdenacao : Pai
             StartCoroutine(colorir(tempo, arr[j + 1], arr[i]));
             yield return new WaitForSecondsRealtime(tempo);
             //tempo += 1;
-            trocas = trocas + 1;
+            //trocas = trocas + 1;
             StartCoroutine(troca(tempo, arr[j + 1], key));
             yield return new WaitForSecondsRealtime(tempo);
             //tempo += 1;
@@ -136,16 +136,16 @@ public class MetodosOrdenacao : Pai
 
                 int j;
 
-                comparacoes = comparacoes + 1;
+                //comparacoes = comparacoes + 1;
                 for (j = i; j >= gap && int.Parse(arr[j - gap].GetComponentInChildren<Text>().text) > temp; j -= gap)
                 {
                     //arr[j] = arr[j - gap];
 
-                    comparacoes = comparacoes + 1;
+                    //comparacoes = comparacoes + 1;
                     StartCoroutine(colorir(tempo, arr[j], arr[j - gap]));
                     yield return new WaitForSecondsRealtime(tempo);
                     //tempo += 1;
-                    trocas = trocas + 1;
+                    //trocas = trocas + 1;
                     StartCoroutine(troca(tempo, arr[j], arr[j - gap]));
                     yield return new WaitForSecondsRealtime(tempo);
                     //tempo += 1;
@@ -162,7 +162,7 @@ public class MetodosOrdenacao : Pai
                 StartCoroutine(colorir(tempo, arr[j], arr[i]));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
-                trocas = trocas + 1;
+                //trocas = trocas + 1;
                 StartCoroutine(troca(tempo, arr[j], temp));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
@@ -254,11 +254,11 @@ public class MetodosOrdenacao : Pai
         txtBotaoA = a.GetComponentInChildren<Text>();
         txtBotaoB = b.GetComponentInChildren<Text>();
 
-        comparacoes = comparacoes + 1;
+        //comparacoes = comparacoes + 1;
 
         if (int.Parse(txtBotaoB.text) < int.Parse(txtBotaoA.text))
         {
-            trocas = trocas + 1;
+            //trocas = trocas + 1;
             aux = txtBotaoA.text;
             txtBotaoA.text = txtBotaoB.text;
             txtBotaoB.text = aux;
@@ -317,7 +317,7 @@ public class MetodosOrdenacao : Pai
             yield return new WaitForSecondsRealtime(tempo);
 
             
-            comparacoes = comparacoes + 1;
+            //comparacoes = comparacoes + 1;
             if (int.Parse(arr[j].GetComponentInChildren<Text>().text) <= pivot)
             {
                 i++;
@@ -326,10 +326,10 @@ public class MetodosOrdenacao : Pai
                 //Debug.Log(arr[i].GetComponentInChildren<Text>().text);
                 //Debug.Log(arr[j].GetComponentInChildren<Text>().text);
 
-                comparacoes = comparacoes + 1;
+                //comparacoes = comparacoes + 1;
                 StartCoroutine(colorir(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
-                trocas = trocas + 1;
+                //trocas = trocas + 1;
                 StartCoroutine(trocaPares(tempo, arr[i], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 StartCoroutine(colorirAgain(tempo, arr[j]));
@@ -342,7 +342,7 @@ public class MetodosOrdenacao : Pai
 
         StartCoroutine(colorir(tempo, arr[i + 1]));
         yield return new WaitForSecondsRealtime(tempo);
-        trocas = trocas + 1;
+        //trocas = trocas + 1;
         StartCoroutine(trocaPares(tempo, arr[i + 1], arr[high]));
         yield return new WaitForSecondsRealtime(tempo);
         StartCoroutine(colorirAgain(tempo, arr[high], arr[i + 1]));

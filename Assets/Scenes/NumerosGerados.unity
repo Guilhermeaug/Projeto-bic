@@ -131,8 +131,8 @@ GameObject:
   - component: {fileID: 569539377}
   - component: {fileID: 569539376}
   - component: {fileID: 569539375}
-  - component: {fileID: 569539374}
   - component: {fileID: 569539373}
+  - component: {fileID: 569539374}
   m_Layer: 0
   m_Name: basic_01 BLUE
   m_TagString: Untagged
@@ -149,10 +149,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 569539372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5355350cf5607bb4da3d7907a358ab0f, type: 3}
+  m_Script: {fileID: 11500000, guid: bd94c669bf97b0748872b517b30eef19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1: NumerosGerados
+  level2: GraficoComparacao
 --- !u!222 &569539374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -343,6 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331074294}
   - component: {fileID: 1331074293}
+  - component: {fileID: 1331074297}
   - component: {fileID: 1331074295}
   - component: {fileID: 1331074296}
   m_Layer: 0
@@ -403,6 +404,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5642a0d2f0dab74a81b9a30a3acba49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentPanel: {fileID: 2044478960}
+--- !u!114 &1331074297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331074292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3e5bd690b384747b603b60235b2189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ParentPanel: {fileID: 2044478960}

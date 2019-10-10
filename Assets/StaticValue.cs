@@ -7,7 +7,11 @@ public class StaticValue : MonoBehaviour
 {
     static private int intervaloInicio, intervaloFim, qtd;
     static private string metodo;
-    
+    //static int comparacoesSelection = 0, comparacoesInsertion = 0, comparacoesShell = 0, comparacoesBubble = 0, comparacoesQuick = 0;
+    //static int trocasSelection = 0, trocasInsertion = 0, trocasShell = 0, trocasBubble = 0, trocasQuick = 0;
+    static int[] comparacoes = new int[5];
+    static int[] trocas = new int[5];
+
     public void lerIntervaloInicio(string alvo)
     {
         intervaloInicio = int.Parse(alvo);
@@ -30,6 +34,47 @@ public class StaticValue : MonoBehaviour
     {
         metodo = EventSystem.current.currentSelectedGameObject.name;
         //Debug.Log(metodo);
+    }
+
+    public void lerOperacoes(int comp1, int comp2, int comp3, int comp4, int comp5, int troca1, int troca2, int troca3, int troca4, int troca5)
+    {
+        comparacoes[0] = comp1;
+        comparacoes[1] = comp2;
+        comparacoes[2] = comp3;
+        comparacoes[3] = comp4;
+        comparacoes[4] = comp5;
+
+        
+
+        trocas[0] = troca1;
+        trocas[1] = troca2;
+        trocas[2] = troca3;
+        trocas[3] = troca4;
+        trocas[4] = troca5;
+
+        /*comparacoesSelection = comp1;
+        comparacoesInsertion = comp2;
+        comparacoesShell = comp3;
+        comparacoesBubble = comp4;
+        comparacoesQuick = comp5;
+
+        trocasSelection = troca1;
+        trocasInsertion = troca2;
+        trocasShell = troca3;
+        trocasBubble = troca4;
+        trocasQuick = troca5;
+        */
+    }
+
+    public int[] getComparacoes()
+    {
+        
+        return comparacoes;
+    }
+
+    public int[] getTrocas()
+    {
+        return trocas;
     }
 
     public int getQtd()

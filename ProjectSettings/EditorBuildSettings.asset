@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NumerosGerados.unity
     guid: 1a9e48fe48148da46a72a711580fc997
+  - enabled: 1
+    path: Assets/Scenes/GraficoComparacao.unity
+    guid: 58821ddd1559e38489bff4bfdec3917f
+  - enabled: 1
+    path: Assets/Scenes/GraficoTroca.unity
+    guid: e7179479277d6e14d95be4f322f0c5be
   m_configObjects: {}
