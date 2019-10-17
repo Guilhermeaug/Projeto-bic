@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Geral.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/Teste Simultaneo Insertion.unity
+    path: 
     guid: 4abda938cf0944440a4ad1a3ba26c18c
   - enabled: 1
     path: Assets/Scenes/GeralRework.unity
@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GraficoTroca.unity
     guid: e7179479277d6e14d95be4f322f0c5be
+  - enabled: 1
+    path: Assets/Scenes/TesteSimultaneo.unity
+    guid: e1572111e80f5bd4a87a22f0cac26919
+  - enabled: 1
+    path: Assets/Scenes/NumerosGeradosSimultaneo.unity
+    guid: cc7f6bfed6eb39c42ad4d2d8151a18dc
+  - enabled: 1
+    path: Assets/Scenes/Teoria.unity
+    guid: 950118ec47f7ab543979a719302ec208
   m_configObjects: {}
