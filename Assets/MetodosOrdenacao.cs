@@ -7,7 +7,7 @@ public class MetodosOrdenacao : Pai
 {
     public RectTransform ParentPanel;
     //public Button buttonTrocas, buttonComparacoes;
-    private float tempo = 1, tempoInicial = 3;
+    private float tempo = 1f, tempoInicial = 3;
     //int comparacoes = 0, trocas = 0;
 
     public void selection()
@@ -84,6 +84,15 @@ public class MetodosOrdenacao : Pai
             int key = int.Parse(arr[i].GetComponentInChildren<Text>().text);
             int j = i - 1;
 
+            StartCoroutine(colorirVermelho(tempo, arr[i]));
+            yield return new WaitForSecondsRealtime(tempo);
+
+            StartCoroutine(colorir(tempo, arr[j]));
+            yield return new WaitForSecondsRealtime(tempo);
+
+            StartCoroutine(colorirAgain(tempo, arr[j]));
+            yield return new WaitForSecondsRealtime(tempo);
+
             //comparacoes = comparacoes + 1;
             while (j >= 0 && int.Parse(arr[j].GetComponentInChildren<Text>().text) > key)
             {
@@ -102,6 +111,7 @@ public class MetodosOrdenacao : Pai
                 j = j - 1;
                 //tempo += 2;
             }
+
             // arr[j + 1].GetComponentInChildren<Text>().text = key.ToString();
             StartCoroutine(colorir(tempo, arr[j + 1], arr[i]));
             yield return new WaitForSecondsRealtime(tempo);
@@ -112,6 +122,11 @@ public class MetodosOrdenacao : Pai
             //tempo += 1;
             StartCoroutine(colorirAgain(tempo, arr[j + 1], arr[i]));
             yield return new WaitForSecondsRealtime(tempo);
+
+            StartCoroutine(colorirAgain(tempo, arr[i]));
+            yield return new WaitForSecondsRealtime(tempo);
+
+
         }
     }
 
@@ -133,8 +148,16 @@ public class MetodosOrdenacao : Pai
             {
 
                 int temp = int.Parse(arr[i].GetComponentInChildren<Text>().text);
-
                 int j;
+
+                StartCoroutine(colorirVermelho(tempo, arr[i]));
+                yield return new WaitForSecondsRealtime(tempo);
+
+                StartCoroutine(colorir(tempo, arr[i - gap]));
+                yield return new WaitForSecondsRealtime(tempo);
+
+                StartCoroutine(colorirAgain(tempo, arr[i - gap]));
+                yield return new WaitForSecondsRealtime(tempo);
 
                 //comparacoes = comparacoes + 1;
                 for (j = i; j >= gap && int.Parse(arr[j - gap].GetComponentInChildren<Text>().text) > temp; j -= gap)
@@ -305,23 +328,25 @@ public class MetodosOrdenacao : Pai
 
         int pivot = int.Parse(arr[high].GetComponentInChildren<Text>().text);
 
-
         // index of smaller element 
         int i = (low - 1);
-
 
         for (int j = low; j < high; j++)
         {
             
-            StartCoroutine(colorir(tempo, arr[high]));
+            StartCoroutine(colorirVermelho(tempo, arr[high]));
             yield return new WaitForSecondsRealtime(tempo);
 
-            
+            StartCoroutine(colorir(tempo, arr[j]));
+            yield return new WaitForSecondsRealtime(tempo);
+
+            StartCoroutine(colorirAgain(tempo, arr[j]));
+            yield return new WaitForSecondsRealtime(tempo);
+
             //comparacoes = comparacoes + 1;
             if (int.Parse(arr[j].GetComponentInChildren<Text>().text) <= pivot)
             {
                 i++;
-
 
                 //Debug.Log(arr[i].GetComponentInChildren<Text>().text);
                 //Debug.Log(arr[j].GetComponentInChildren<Text>().text);
@@ -329,15 +354,18 @@ public class MetodosOrdenacao : Pai
                 //comparacoes = comparacoes + 1;
                 StartCoroutine(colorir(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
+
                 //trocas = trocas + 1;
+                StartCoroutine(colorir(tempo, arr[i]));
+                yield return new WaitForSecondsRealtime(tempo);
+
                 StartCoroutine(trocaPares(tempo, arr[i], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
-                StartCoroutine(colorirAgain(tempo, arr[j]));
+
+                StartCoroutine(colorirAgain(tempo, arr[j], arr[i]));
                 yield return new WaitForSecondsRealtime(tempo);
 
             }
-
-
         }
 
         StartCoroutine(colorir(tempo, arr[i + 1]));

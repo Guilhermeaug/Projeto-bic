@@ -23,4 +23,9 @@ public class MoveScenes0 : MonoBehaviour
     {
         SceneManager.LoadScene(level0);
     }
+
+    public void GO()
+    {
+        SceneManager.LoadScene(level0);
+    }
 }
