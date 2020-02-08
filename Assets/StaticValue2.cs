@@ -12,6 +12,7 @@ public class StaticValue2 : MonoBehaviour
     static int[] comparacoes = new int[5];
     static int[] trocas = new int[5];
 
+    
     public void lerIntervaloInicio(string alvo)
     {
         intervaloInicio = int.Parse(alvo);
@@ -27,6 +28,13 @@ public class StaticValue2 : MonoBehaviour
     public void lerQuantidade(string alvo)
     {
         qtd = int.Parse(alvo);
+
+        if(qtd > 20)
+        {
+            qtd = 20;
+        }
+
+
         //Debug.Log(qtd);
     }
 

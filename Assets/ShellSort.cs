@@ -35,7 +35,7 @@ public class ShellSort : Pai
                     //arr[j] = arr[j - gap];
 
                     comparacoes = comparacoes + 1;
-                    StartCoroutine(colorir(tempo, arr[j], arr[j - gap]));
+                    StartCoroutine(colorirCyan(tempo, arr[j], arr[j - gap]));
                     yield return new WaitForSecondsRealtime(tempo);
                     //tempo += 1;
                     trocas = trocas + 1;
@@ -52,7 +52,7 @@ public class ShellSort : Pai
                 
                  //arr[j] = temp;
                  //arr[j + 1].GetComponentInChildren<Text>().text = key.ToString();
-                 StartCoroutine(colorir(tempo, arr[j], arr[i]));
+                 StartCoroutine(colorirCyan(tempo, arr[j], arr[i]));
                  yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
                 trocas = trocas + 1;

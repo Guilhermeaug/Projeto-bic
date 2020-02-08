@@ -52,7 +52,7 @@ public class NewBehaviourScript : Pai
                   
 
                     tempo = tempo + 2;
-                    StartCoroutine(colorir(tempo, x.GetComponent<Image>(), botaoA.GetComponent<Image>()));
+                    StartCoroutine(colorirCyan(tempo, x.GetComponent<Image>(), botaoA.GetComponent<Image>()));
 
                     tempo = tempo + 2;
                     StartCoroutine(comparar(tempo, botaoA, botaoB));
@@ -65,7 +65,7 @@ public class NewBehaviourScript : Pai
                     botaoB = x;
 
                     tempo = tempo + 2;
-                    StartCoroutine(colorir(tempo, x.GetComponent<Image>(), botaoA.GetComponent<Image>()));
+                    StartCoroutine(colorirCyan(tempo, x.GetComponent<Image>(), botaoA.GetComponent<Image>()));
 
                     tempo = tempo + 2;
                     StartCoroutine(comparar(tempo, botaoA, botaoB));
@@ -110,7 +110,7 @@ public class NewBehaviourScript : Pai
     }
 
     
-    IEnumerator colorir(float tempo, Image a, Image b)
+    IEnumerator colorirCyan(float tempo, Image a, Image b)
     {
 
         yield return new WaitForSecondsRealtime(tempo);

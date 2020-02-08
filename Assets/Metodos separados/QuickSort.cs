@@ -33,7 +33,7 @@ public class QuickSort : Pai
         {
             // If current element is smaller  
             // than or equal to pivot 
-            StartCoroutine(colorir(tempo, arr[high]));
+            StartCoroutine(colorirCyan(tempo, arr[high]));
             yield return new WaitForSecondsRealtime(tempo);
 
             comparacoes = comparacoes + 1;
@@ -46,7 +46,7 @@ public class QuickSort : Pai
                 //Debug.Log(arr[j].GetComponentInChildren<Text>().text);
 
                 comparacoes = comparacoes + 1;
-                StartCoroutine(colorir(tempo, arr[j]));
+                StartCoroutine(colorirCyan(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 trocas = trocas + 1;
                 StartCoroutine(trocaPares(tempo, arr[i], arr[j]));
@@ -59,7 +59,7 @@ public class QuickSort : Pai
             
         }
 
-        StartCoroutine(colorir(tempo, arr[i + 1]));
+        StartCoroutine(colorirCyan(tempo, arr[i + 1]));
         yield return new WaitForSecondsRealtime(tempo);
         trocas = trocas + 1;
         StartCoroutine(trocaPares(tempo, arr[i + 1], arr[high]));

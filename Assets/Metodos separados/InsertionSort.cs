@@ -30,7 +30,7 @@ public class InsertionSort : Pai
             {
                 comparacoes = comparacoes + 1;
                 // arr[j + 1].GetComponentInChildren<Text>().text = arr[j].GetComponentInChildren<Text>().text;
-                StartCoroutine(colorir(tempo, arr[j + 1], arr[j]));
+                StartCoroutine(colorirCyan(tempo, arr[j + 1], arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
                 //tempo += 1;
                 trocas = trocas + 1;
@@ -44,7 +44,7 @@ public class InsertionSort : Pai
                 //tempo += 2;
             }
             // arr[j + 1].GetComponentInChildren<Text>().text = key.ToString();
-            StartCoroutine(colorir(tempo, arr[j + 1], arr[i]));
+            StartCoroutine(colorirCyan(tempo, arr[j + 1], arr[i]));
             yield return new WaitForSecondsRealtime(tempo);
             //tempo += 1;
             trocas = trocas + 1;

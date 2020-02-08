@@ -28,6 +28,11 @@ public class StaticValue : MonoBehaviour
     {
         qtd = int.Parse(alvo);
         //Debug.Log(qtd);
+
+        if (qtd > 50)
+        {
+            qtd = 50;
+        }
     }
 
     public void lerMetodo()

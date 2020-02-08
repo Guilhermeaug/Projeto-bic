@@ -23,11 +23,11 @@ public class SelectionSort : Pai
         for (int i = 0; i < n - 1; i++) 
         {  
             int min_idx = i;
-            StartCoroutine(colorir(tempo, arr[min_idx]));
+            StartCoroutine(colorirCyan(tempo, arr[min_idx]));
 
             for (int j = i + 1; j < n; j++)
             {
-                StartCoroutine(colorir(tempo, arr[j]));
+                StartCoroutine(colorirCyan(tempo, arr[j]));
                 yield return new WaitForSecondsRealtime(tempo);
 
                 comparacoes = comparacoes + 1;
@@ -46,7 +46,7 @@ public class SelectionSort : Pai
 
             trocas = trocas + 1;
 
-            StartCoroutine(colorir(tempo, arr[min_idx]));
+            StartCoroutine(colorirCyan(tempo, arr[min_idx]));
             yield return new WaitForSecondsRealtime(tempo);
 
             StartCoroutine(troca(tempo, arr[min_idx], arr[i]));
